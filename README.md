@@ -1,37 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luma — Learning Platform
 
-## Getting Started
+Responsive landing page built from the Buzzvel Figma design.
 
-First, run the development server:
+## Tech stack
+
+- Next.js App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- `next/font` and `next/image`
+- Storybook 10 and Playwright
+
+## Getting started
+
+Requires Node.js compatible with the installed Next.js version and npm.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev              # Development server
+npm run build            # Production build
+npm start                # Production server
+npm run lint             # ESLint
+npm run typecheck        # TypeScript
+npm run storybook        # Storybook at http://localhost:6006
+npm run build-storybook  # Build Storybook
+npm run test-storybook   # Run interaction tests
+```
 
-## Learn More
+To run Storybook interaction tests, install the Playwright browser first:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx playwright install chromium
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start Storybook in one terminal with `npm run storybook`, then run `npm run test-storybook` in another.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+- The page uses the Next.js App Router. Most sections are Server Components; the header is a Client Component for the mobile menu.
+- Sections and shared UI are split into reusable components. Images exported from Figma are stored in `public/images-updated`.
+- Layouts are responsive across mobile, tablet and desktop.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Time spent
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# luma-learning-platform
+Approximately 20 hours.
+
+## AI tools
+
+ChatGPT was used for code review, debugging, Figma comparison and documentation. Changes were reviewed against the design and project code.
